@@ -1,0 +1,61 @@
+<head>
+  <style>
+    .navbar-brand {
+      padding: 0;
+    }
+
+    .navbar-brand img {
+      max-height: 2rem; /* Adjust the maximum height of the logo as needed */
+      width: auto; /* Allow the width to adjust automatically */
+    }
+
+    .navbar-nav .nav-link {
+      padding: 0.5rem 1rem;
+    }
+  </style>
+
+  <!-- Additional styles -->
+  <style>
+    .navbar {
+      height: 3.5rem; /* Adjust the height of the navbar as needed */
+    }
+
+    .navbar-brand {
+      font-size: 1.5rem;
+    }
+
+    .navbar-nav .nav-link {
+      font-size: 1.2rem;
+    }
+
+    .navbar-collapse {
+      margin-top: 0.5rem; /* Adjust the margin-top as needed */
+    }
+  </style>
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{{url_for('home')}}"><img src="{{url_for('static', filename = 'images/logogold.jpg')}}" alt="Logo"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{{url_for('analysis')}}">Insights</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('index')}}">Predict Attrition</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('about')}}">About</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="{{url_for('test')}}">Test</a>
+        </li> -->
+      </ul>
+    </div>
+  </div>
+</nav>
+
