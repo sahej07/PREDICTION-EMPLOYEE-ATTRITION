@@ -1,0 +1,143 @@
+{%extends "home.html"%}
+{%block content%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Attrition Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: linear-gradient(rgba(0,0,0,0.5),#31ffeb),url("{{url_for('static', filename = 'images/bg2.jpg')}}");
+            color: #ffffff;
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            justify-content: center;
+        }
+
+        p {
+            font-size: 1.125rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            font-size: 1.125rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-weight: bold;
+            border: 3px solid #009688;
+            background: transparent;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            position: relative;
+            overflow: hidden;
+            transition: color 0.5s;
+        }
+
+        .button span {
+            background: #fff;
+            height: 100%;
+            width: 0;
+            border-radius: 25px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: -1;
+            transition: 0.5s;
+        }
+
+        .button:hover span {
+            width: 100%;
+        }
+
+        .button:hover {
+            border: none;
+            color: #000;
+        }
+
+        /* Popup styles */
+        .popup {
+            display: none;
+            position: fixed;
+            color: #000;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>About Our Employee Attrition Predictor</h1>
+        <p>Welcome to the Employee Attrition Predictor website! We're dedicated to helping organizations better understand and manage employee attrition through data-driven insights and predictive analytics.</p>
+
+        <h2>Our Mission</h2>
+        <p>Our mission is to provide HR professionals and organizational leaders with the tools and resources they need to identify, analyze, and mitigate employee attrition effectively.</p>
+
+        <h2>What We Offer</h2>
+        <p>Our website offers a range of features and services, including:</p>
+        <ul>
+            <li><strong>Predictor Tool:</strong> Our predictive analytics tool helps organizations forecast employee attrition based on various factors and attributes.</li>
+            <li><strong>Insights:</strong> We provide data-driven insights and analysis on employee attrition trends, helping organizations make informed decisions.</li>
+            <li><strong>High Accuracy:</strong> Our model achieves high accuracy, ensuring reliable predictions (96.62% accuracy).</li>
+        </ul>
+
+        <h2>Who We Are</h2>
+        <p>We are a team of Final Year Engineering Students passionate about leveraging technology and data to address real-world challenges in workforce management.</p>
+
+        <h2>Contact Us</h2>
+        <p>If you have any questions, feedback, or inquiries, please don't hesitate to <a href="#" onclick="toggleContactPopup()">contact us</a>. We'd love to hear from you!</p>
+        
+        <p>Ready to get started?</p>
+        <a href="{{url_for('index')}}" class="button">PREDICT ATTRITION<span></span></a>
+        <a href="{{url_for('analysis')}}" class="button">VIEW INSIGHTS<span></span></a>
+    </div>
+
+    <!-- Popup container -->
+    <div id="contactPopup" class="popup">
+        <h2>Contact Us</h2>
+        <p>If you have any questions, feedback, or inquiries, please don't hesitate to reach out to us.</p>
+        <p>Email: eapsupport@eap.com</p>
+        <p>Phone Number: +91 9652021836 </p>
+        <button onclick="toggleContactPopup()">Close</button>
+    </div>
+    <script>
+        function toggleContactPopup() {
+            var contactPopup = document.getElementById("contactPopup");
+            contactPopup.style.display = (contactPopup.style.display === "block") ? "none" : "block";
+        }
+    </script>
+</body>
+</html>
+
+{%endblock%}
